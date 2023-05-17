@@ -14,7 +14,7 @@ export default function Header() {
             </label>
             <ul className="menu">
                 <li><a className="nostyle" href="/events">Events</a></li>
-                <li><a className="nostyle" href="/contact">Contact</a></li>
+                {/* <li><a className="nostyle" href="/contact">Contact</a></li> */}
                 <li><a className="nostyle" href="/about">About</a></li>
             </ul>
         </section>
