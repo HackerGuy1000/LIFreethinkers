@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Event from "../components/Event";
 import Meeting1 from "../components/images/meeting.jpeg"
 import "../components/css/Main.css"
@@ -14,6 +15,7 @@ export default function Events() {
         <h2>Events</h2>
         </section>
         <Event image={Meeting1} title="First Introductory Event" text="For our first event we are gonna bruh you know"/>
+        <Footer/>
         </>
     )
 }

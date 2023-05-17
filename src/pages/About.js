@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../components/css/Main.css"
 
 
@@ -53,7 +54,7 @@ export default function About() {
                 <h3 id="aboutTitle">About LIFT</h3>
                 <p id= "aboutText">We are a bunch of people who have free thoughts and stuff I think</p>
             </div>
-                    
+            <Footer/>
         </>
     )
 }
