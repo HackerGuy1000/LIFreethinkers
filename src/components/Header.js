@@ -13,9 +13,9 @@ export default function Header() {
                 <div className='menu-button'></div>
             </label>
             <ul className="menu">
-                <li><a className="nostyle" href="/merch">Shop</a></li>
+                <li><a className="nostyle" href="/merch">Support Us</a></li>
                 {/* <li><a className="nostyle" href="/contact">Contact</a></li> */}
-                <li><a className="nostyle" href="/about">About</a></li>
+                <li><a className="nostyle" href="/about">About Us</a></li>
             </ul>
         </section>
     )
