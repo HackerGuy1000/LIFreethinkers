@@ -13,8 +13,8 @@ export default function Header() {
                 <div className='menu-button'></div>
             </label>
             <ul className="menu">
-                <li><a className="nostyle" href="/merch">Support Us</a></li>
                 <li><a className="nostyle" href="/about">About Us</a></li>
+                <li><a className="nostyle" href="/merch">Support Us</a></li>
             </ul>
         </section>
     )
