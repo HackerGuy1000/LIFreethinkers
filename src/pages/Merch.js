@@ -34,9 +34,9 @@ export default function Merch() {
     const formik = useFormik({
         initialValues: {
             date: {currentDate},
+            item: 'LIFT Hoodie: $39',
             name: '',
             email: '',
-            item: 'LIFT Hoodie',
             size: 'Medium',
             tos: '',
         },
@@ -49,14 +49,12 @@ export default function Merch() {
             email: Yup.string()
                 .email("Invalid email address")
                 .required('Email is required'),
-            tos: Yup.array().required("Terms of service must be checked")
         }),
 
         //Submit Form
         onSubmit: (values) => {
             setLoading(1)
             const form = document.querySelector("#form")
-            const modal = document.getElementById("success")
             const close = document.getElementById('close')
             close.addEventListener('click', () => {
                 window.location.reload(false);
@@ -64,24 +62,21 @@ export default function Merch() {
             const submitButton = document.querySelector("#submit")
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxuY9cgfn4M203y98HIX6_6ISE1ybv2MBP2kyJWQomVn2FFVTxF1TUkRpzGAWI5Gbhg/exec'
             
-            form.addEventListener('submit', e => {
-                submitButton.disabled = true
-                e.preventDefault()
-                let requestBody = new FormData(form)
-                fetch(scriptURL, { method: 'POST', body: requestBody})
-                .then(response => {
-                    setLoading(0)
-                    document.getElementById("success").showModal()
-                    submitButton.disabled = false
-                    console.log("submitted")
-                    })
-                .catch(error => {
-                alert('Error!', error.message)
-                    submitButton.disabled = false
-            
+            submitButton.disabled = true
+            let requestBody = new FormData(form)
+            fetch(scriptURL, { method: 'POST', body: requestBody})
+            .then(response => {
+                setLoading(0)
+                document.getElementById("success").showModal()
+                submitButton.disabled = false
+                console.log("submitted")
+                })
+            .catch(error => {
+            alert('Error!', error.message)
+                submitButton.disabled = false
+        
                 }
-                )
-            })
+            )
          
         },
         
@@ -90,19 +85,23 @@ export default function Merch() {
         <>
         <Header/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossOrigin="anonymous"/>
+        <h2 className="page-title">Help To Support Us By Buying Our Merch Below!</h2>
         <main className="mainForm">
             <dialog  id="success">
                     <span id="close">&times;</span>
                     <h1 className="order-submitted">Your Order Has Been Submitted</h1>
-                    <h2 className="order-time">The Order Will Take Around A Month To Ship</h2>
+                    <h2 className="order-time">The Order Will Take Around Two Weeks To Ship</h2>
+                    <h2 className="order-time">You Will Recieve An Email From lifreethinkers@gmail.com On How To Complete The Purchase With Zelle</h2>
+
+
             </dialog>
             <form className="formSection" onSubmit={formik.handleSubmit} id="form">
                 <div className="leftSideForm">
-                    <h1 className="formTitle">LIFT Merch </h1>
-                    {formik.values.item == null && <h3 className="formDesc">$39</h3>}
-                    {formik.values.item == "LIFT Hoodie" && <h3 className="formDesc">$39</h3>}
-                    {formik.values.item == "LIFT T-Shirt" && <h3 className="formDesc">$17</h3>}
-                    {formik.values.item == "LIFT Shorts" && <h3 className="formDesc">$33</h3>}
+                    <h1 className="formTitle">LIFT Merchandise </h1>
+                    {/* {formik.values.item == null && <h3 className="formDesc">$39</h3>}
+                    {formik.values.item == "LIFT Hoodie: $39" && <h3 className="formDesc">$39</h3>}
+                    {formik.values.item == "LIFT T-Shirt: $17" && <h3 className="formDesc">$17</h3>}
+                    {formik.values.item == "LIFT Shorts: $33" && <h3 className="formDesc">$33</h3>} */}
 
                     <div className="formDiv">
                         <input 
@@ -110,6 +109,22 @@ export default function Merch() {
                             name="date" 
                             value={currentDate}
                         />
+                        
+                         {/* Item Input Field */}
+                         <div className="field">
+                            <label className="label" htmlFor="item">Item</label>
+                            <select 
+                                id = "item" 
+                                name="item" 
+                                className="inputName" 
+                                value={formik.values.item} 
+                                onChange={formik.handleChange}>
+                                <option disabled hidden defaultValue>Select</option>
+                                <option value="LIFT Hoodie: $39">LIFT Hoodie: $39</option>
+                                <option value="LIFT T-Shirt: $17">LIFT T-Shirt: $17</option>
+                                <option value="LIFT Shorts: $33">LIFT Shorts: $33</option>
+                            </select>
+                         </div>
 
                          {/* Name Input Field */}
                          <div className="field">
@@ -137,21 +152,6 @@ export default function Merch() {
                                 onBlur={formik.handleBlur}
                             />
                          </div>
-                         {/* Item Input Field */}
-                         <div className="field">
-                            <label className="label" htmlFor="item">Item</label>
-                            <select 
-                                id = "item" 
-                                name="item" 
-                                className="inputName" 
-                                value={formik.values.item} 
-                                onChange={formik.handleChange}>
-                                <option disabled hidden defaultValue>Select</option>
-                                <option value="LIFT Hoodie">LIFT Hoodie</option>
-                                <option value="LIFT T-Shirt">LIFT T-Shirt</option>
-                                <option value="LIFT Shorts">LIFT Shorts</option>
-                            </select>
-                         </div>
                          {/* Size Input Field */}
                          <div className="field">
                             <label className="label" htmlFor="size">Size</label>
@@ -165,14 +165,14 @@ export default function Merch() {
                                 <option value="Small">Small</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Large">Large</option>
-                                <option value="Extra Large">Extra Large</option>
-                                <option value="Extra Extra Large">Extra Extra Large</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
                             </select>
                          </div>
                     </div>
                     {/* Terms of Service Input Field */}
                     <div className="field">
-                            <label className={formik.touched.tos && formik.errors.tos ? "error-label" : "label"} htmlFor="tos">{formik.touched.tos && formik.errors.tos ? formik.errors.tos: 'Terms of service'}</label>
+                            {/* <label className="label" htmlFor="tos"></label> */}
                             <div className="terms">
                                 <input 
                                     type="checkbox" 
@@ -180,8 +180,9 @@ export default function Merch() {
                                     value='checked'
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
+                                    className="checkbox"
                                     />
-                                <p>I Agree On Receiving the LIFT Newsletter</p>
+                                <p>I Want To Receive The LIFT Newsletter</p>
                             </div>
                     </div>
                     {loading == 0 && <button type="submit" id = "submit" className="submitButton">Submit</button>}
@@ -189,9 +190,9 @@ export default function Merch() {
                 </div>
                 <div className="itemImage">
                     {formik.values.item == null && <img src={DarkHoodie} className="clothingImage" alt="Black Hoodie With LIFT Logo"/>}
-                    {formik.values.item == "LIFT Hoodie" && <img src={DarkHoodie} className="clothingImage" alt="Black Hoodie With LIFT Logo"/>}
-                    {formik.values.item == "LIFT T-Shirt" && <img src={WhiteShirt} className="clothingImage" alt="White Shirt With LIFT Logo"/>}
-                    {formik.values.item == "LIFT Shorts" && <img src={WhiteShorts} className="clothingImage" alt="White Shorts With LIFT Logo"/>}
+                    {formik.values.item == "LIFT Hoodie: $39" && <img src={DarkHoodie} className="clothingImage" alt="Black Hoodie With LIFT Logo"/>}
+                    {formik.values.item == "LIFT T-Shirt: $17" && <img src={WhiteShirt} className="clothingImage" alt="White Shirt With LIFT Logo"/>}
+                    {formik.values.item == "LIFT Shorts: $33" && <img src={WhiteShorts} className="clothingImage" alt="White Shorts With LIFT Logo"/>}
 
                     
                 </div>
