@@ -112,7 +112,8 @@ export default function Merch() {
                         
                          {/* Item Input Field */}
                          <div className="field">
-                            <label className="label" htmlFor="item">Item</label>
+                            <label id="item-desktop"className="label" htmlFor="item">Item</label>
+                            <label id="item-mobile"className="label" htmlFor="item">Item: Scroll Down For A Preview</label>
                             <select 
                                 id = "item" 
                                 name="item" 
