@@ -395,6 +395,9 @@ body{
   min-height:20px;
   min-width:20px;
 }
+.checkbox:hover{
+  cursor: pointer;
+}
 
 .loading-button,.submitButton{
   font-size: 0.875rem; /* 14px */
