@@ -173,7 +173,6 @@ export default function Merch() {
                     </div>
                     {/* Terms of Service Input Field */}
                     <div className="field">
-                            {/* <label className="label" htmlFor="tos"></label> */}
                             <div className="terms">
                                 <input 
                                     type="checkbox" 
