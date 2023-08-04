@@ -19,7 +19,7 @@ export default function Faq(props) {
             <br/>
             <b>How Can I Contact LIFT?</b>
             <br/>
-            You can contact us through either our email, <a className = "social" href="mailto:lifreethinkers@gmail.com" target="_blank" >lifreethinkers@gmail.com</a>, our <a className = "social" href = "https://www.instagram.com/longislandfreethinkers/">Instagram</a> or our <a className = "social" href="https://discord.gg/ruwkwS429C">Discord</a>
+            You can contact us through either our email, <a className = "social" href="mailto:lifreethinkers@gmail.com" target="_blank">lifreethinkers@gmail.com</a>, our <a className = "social" href = "https://www.instagram.com/longislandfreethinkers/">Instagram</a> or our <a className = "social" href="https://discord.gg/ruwkwS429C">Discord</a>
         </p>
     )
 }
