@@ -1,9 +1,9 @@
 import React, { useState }  from "react";
 import Header from "../components/Header";
 import "../components/css/Main.css"
-import DarkHoodie from '../components/images/dark_hoodie.png'
-import WhiteShirt from '../components/images/white_shirt.png'
-import WhiteShorts from '../components/images/white_shorts.png'
+import DarkHoodie from '../components/images/dark_hoodie.webp'
+import WhiteShirt from '../components/images/white_shirt.webp'
+import WhiteShorts from '../components/images/white_shorts.webp'
 import { useFormik } from "formik";
 import * as Yup from 'yup'
 // document.body.style = 'background: #e0f9fb;';

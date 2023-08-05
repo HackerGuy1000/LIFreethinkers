@@ -18,6 +18,13 @@ html,body{
   overflow-x: hidden  ;
 }
 
+@font-face {
+  font-family: 'Abel';
+  src: url(https://fonts.googleapis.com/css2?family=Abel&display=swap);
+  font-display: swap;
+}
+
+
 .main{
     margin-top: 10%; 
     min-height: 100%;
@@ -132,12 +139,14 @@ html,body{
   }
 }
 
-#test{
+#home-logo{
   max-width: 15%;
-  height: auto;
-  width: auto\9; /* ie8 */
-  
+  aspect-ratio: 1/1;
 }
+#header-logo{
+  aspect-ratio: 1/1;
+}
+
 
 .social{
   color: white;

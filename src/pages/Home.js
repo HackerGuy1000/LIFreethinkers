@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import "../components/css/Main.css"
-import logo from '../components/images/LIFT_No_Outline.png'
+import logo from '../components/images/LIFT_No_Outline.webp'
 
 
 // document.body.style = 'background: #e0f9fb;';
@@ -13,7 +13,7 @@ export default function Home() {
         <section className="home-page">
         <h1 className="page-title">Long Island Free Thinkers</h1>
         <div className="top-half" id="half">
-            <img id="test" src={logo}/>
+            <img id="home-logo" src={logo} alt="LIFT Logo"/>
             <h1 id="homeText">Inspiring <span id="home-text-animated">Free Speech And Thought </span> Across Long Island</h1>
         </div>
         {/* <hr className="divider"/> */}
