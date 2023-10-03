@@ -25,7 +25,7 @@ export default function About() {
             observer.observe(el)
             console.log('observing`')
         });
-    })
+    })          
     return (
         <>
             <Header />
@@ -83,7 +83,7 @@ export default function About() {
                             <ul>
                                 <li className="hidden join-list">Follow our <a className="social" href="https://www.instagram.com/longislandfreethinkers" target="_blank">Instagram</a> for updates</li>
                                 <li className="hidden join-list">Visit our <a className="social" href="https://discord.gg/ruwkwS429C" target="_blank">Discord Server</a> to chat and learn more</li>
-                                <li className="hidden join-list">Email us at <a className="social" href="mailto:lifreethinkers@gmail.com" target="_blank">lifreethinkers@gmail.com</a> if your school is interested in collaberating</li>
+                                <li className="hidden join-list">Email us at <a className="social" href="mailto:lifreethinkers@gmail.com" target="_blank">lifreethinkers@gmail.com</a> if your school is interested in collaborating</li>
                             </ul>
                         </p>
                     </section>
