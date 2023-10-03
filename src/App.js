@@ -10,6 +10,7 @@ function App() {
     <div >
       <BrowserRouter>
         <Routes>
+          <Route exact path="/" component={<Home/>} />
           <Route index element={<Home />}/>
           <Route path="/home" element={<Home />}/>
           <Route path="/merch" element={<Merch />}/>
