@@ -9,6 +9,7 @@ import * as Yup from 'yup'
 // document.body.style = 'background: #e0f9fb;';
 
 export default function Merch() {
+    // This function gets the date and time and puts it into a string to return when an order is submitted
     function getDateTime() {
         var date = new Date();
         var hour = date.getHours();
@@ -28,9 +29,11 @@ export default function Merch() {
     
     let currentDate = getDateTime();
 
-    const [selects,setSelects] = useState();
+    //Creates useState varriables for when the form is loading  
     const [loading, setLoading] = useState(0)
-    //Formiks Logics
+    
+    
+    //Form template using Formik
     const formik = useFormik({
         initialValues: {
             date: {currentDate},
@@ -41,7 +44,7 @@ export default function Merch() {
             tos: '',
         },
         
-        //Validate Form
+        //Validate template for name and email
         validationSchema: Yup.object({
             name: Yup.string()
                 .max(20,'Name must be 20 characters or less.')
@@ -51,7 +54,7 @@ export default function Merch() {
                 .required('Email is required'),
         }),
 
-        //Submit Form
+        //Run when the user submits the form
         onSubmit: (values) => {
             setLoading(1)
             const form = document.querySelector("#form")
@@ -63,6 +66,7 @@ export default function Merch() {
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxuY9cgfn4M203y98HIX6_6ISE1ybv2MBP2kyJWQomVn2FFVTxF1TUkRpzGAWI5Gbhg/exec'
             
             submitButton.disabled = true
+            //Sends data to the google sheet
             let requestBody = new FormData(form)
             fetch(scriptURL, { method: 'POST', body: requestBody})
             .then(response => {
@@ -98,10 +102,7 @@ export default function Merch() {
             <form className="formSection" onSubmit={formik.handleSubmit} id="form">
                 <div className="leftSideForm">
                     <h1 className="formTitle">LIFT Merchandise </h1>
-                    {/* {formik.values.item == null && <h3 className="formDesc">$39</h3>}
-                    {formik.values.item == "LIFT Hoodie: $39" && <h3 className="formDesc">$39</h3>}
-                    {formik.values.item == "LIFT T-Shirt: $17" && <h3 className="formDesc">$17</h3>}
-                    {formik.values.item == "LIFT Shorts: $33" && <h3 className="formDesc">$33</h3>} */}
+    
 
                     <div className="formDiv">
                         <input 

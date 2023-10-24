@@ -1,15 +1,16 @@
+//Purpose: This is is the about page which displays some of the important information about LIFT
+
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
-import AboutText from "../components/AboutText"
-import { fromTo } from 'kute.js';
 import "../components/css/Main.css";
 
 
 
 
 export default function About() {
-    document.body.style = 'background: #ef2cb1;';
+    document.body.style = 'background: #ef2cb1;'; //Setting BG colour
 
+    //This section is used for the scrolling animation so elements can animate in when visible
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -25,15 +26,20 @@ export default function About() {
             observer.observe(el)
             console.log('observing`')
         });
-    })          
+    })
+    
+    
     return (
         <>
             <Header />
+
+            {/* Importing fonts */}
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
             <link href="https://fonts.googleapis.com/css2?family=Abel&family=Rubik:wght@300&display=swap" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossOrigin="anonymous"/>
+            
             <div className="about-wrapper">
                 <div className="x">
                     <section className="curve-section about-page-title" id="pink">
@@ -42,6 +48,8 @@ export default function About() {
 
                     <div className="spacer layer1"></div>
 
+                    {/* Each of these "curve-section" is used to create the blobs shape, blue and pink indicating the top colour for blending */}
+                    {/* The spacer and layer are used to create space between each section */}
                     <section className="curve-section" id="blue">
                         <h1 className="tenet-title hidden">Group Objective <span className="fas fa-bullseye"/></h1>
                         <p className="about-desc hidden">At LIFT, we strive to foster an environment where people from various backgrounds and worldviews can congregate and discuss their political beliefs in a safe and organized manner.</p>

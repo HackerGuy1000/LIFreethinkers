@@ -1,3 +1,4 @@
+
 import Header from "../components/Header";
 import "../components/css/Main.css"
 import logo from '../components/images/LIFT_No_Outline.webp'
@@ -21,6 +22,7 @@ export default function Home() {
             <div className="wrapper">
             <h1 id="mission"><span className="fas fa-quote-left"/> Long Island Free Thinkers aims to provide a sanctuary of free thought, where politicial ideas and inquiries can be expressed with etiquette and professionality. We also wish to foster empathy and compassion through sharing ideas in a peaceful manner. <span className="fas fa-quote-right"/></h1>
             <p className="credit">-Andrew Abelman : LIFT cofounder</p>
+            {/* If you see this it is because andrews es mi amor ❤️ */}
             </div>
 
         </div>
